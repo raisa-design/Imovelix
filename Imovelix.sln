@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Imovelix.Api", "Imovelix.Api", "{52C44A46-8482-4C21-87D3-86856410CC33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imovelix.Api", "Imovelix.Api\Imovelix.Api.csproj", "{3E5D382A-9C6E-4D4A-A6EA-1E3F0EB04B11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imovelix.Api", "Imovelix.Api\Imovelix.Api.csproj", "{3E5D382A-9C6E-4D4A-A6EA-1E3F0EB04B11}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Imovelix.Dominio", "Imovelix.Dominio", "{9443E9C8-2F62-4B8A-87FD-5E8A9B26B962}"
 EndProject
@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Imovelix.Aplicacao", "Imove
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Imovelix.Infra", "Imovelix.Infra", "{FE8D79A3-C4B7-428A-A2CA-5869C13753A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imovelix.Aplicacao", "Imovelix.Aplicacao\Imovelix.Aplicacao\Imovelix.Aplicacao.csproj", "{8718092D-38C2-4282-892F-39A4FD8F813F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imovelix.Aplicacao", "Imovelix.Aplicacao\Imovelix.Aplicacao\Imovelix.Aplicacao.csproj", "{8718092D-38C2-4282-892F-39A4FD8F813F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imovelix.Dominio", "Imovelix.Dominio\Imovelix.Dominio\Imovelix.Dominio.csproj", "{1F973C92-5F22-4CF5-A6B2-7708202C660C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imovelix.Dominio", "Imovelix.Dominio\Imovelix.Dominio\Imovelix.Dominio.csproj", "{1F973C92-5F22-4CF5-A6B2-7708202C660C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Imovelix.Infra", "Imovelix.Infra\Imovelix.Infra\Imovelix.Infra.csproj", "{619EB4A3-4A0A-473F-B73B-DDCCF14A16D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Imovelix.Infra", "Imovelix.Infra\Imovelix.Infra\Imovelix.Infra.csproj", "{619EB4A3-4A0A-473F-B73B-DDCCF14A16D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
