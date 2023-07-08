@@ -28,7 +28,7 @@ namespace Imovelix.Api.Controllers
 
         // GET api/<ImovelController>/5
         [HttpGet("{id}")]
-        public Imovel Get(int id)
+        public Imovel Get(Guid id)
         {
             var im = _context.Imoveis.FirstOrDefault(x => x.Id == id);
             return im;

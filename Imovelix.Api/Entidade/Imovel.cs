@@ -8,7 +8,7 @@
 
         public string Descricao { get; set; }
 
-        public double Disponivel { get; set; }
+        public bool Disponivel { get; set; }
 
         public bool Status { get; set; }
     }
