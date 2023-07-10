@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Imovelix.Api\Imovelix.Api.csproj" />
+    <ProjectReference Include="..\..\Imovelix.Aplicacao\Imovelix.Aplicacao\Imovelix.Aplicacao.csproj" />
     <ProjectReference Include="..\..\Imovelix.Dominio\Imovelix.Dominio\Imovelix.Dominio.csproj" />
   </ItemGroup>
 
