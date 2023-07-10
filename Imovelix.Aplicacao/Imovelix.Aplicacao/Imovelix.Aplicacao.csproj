@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Imovelix.Dominio\Imovelix.Dominio\Imovelix.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>

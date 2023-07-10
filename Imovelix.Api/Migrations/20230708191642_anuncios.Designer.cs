@@ -3,6 +3,7 @@ using System;
 using Imovelix.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Imovelix.Api.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230708191642_anuncios")]
+    partial class anuncios
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0-preview.5.23280.1");
@@ -31,7 +34,8 @@ namespace Imovelix.Api.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("ImovelId")
+                    b.Property<string>("Imovel")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Titulo")
@@ -39,8 +43,6 @@ namespace Imovelix.Api.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ImovelId");
 
                     b.ToTable("Anuncios");
                 });
@@ -105,17 +107,6 @@ namespace Imovelix.Api.Migrations
                     b.HasIndex("EnderecoId");
 
                     b.ToTable("Imoveis");
-                });
-
-            modelBuilder.Entity("Imovelix.Dominio.Entidades.Anuncios.Anuncio", b =>
-                {
-                    b.HasOne("Imovelix.Dominio.Entidades.Anuncios.Imovel", "Imovel")
-                        .WithMany()
-                        .HasForeignKey("ImovelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Imovel");
                 });
 
             modelBuilder.Entity("Imovelix.Dominio.Entidades.Anuncios.Imovel", b =>
