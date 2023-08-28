@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Imovelix.Api.Data;
 using Imovelix.Dominio.Entidades.Anuncios;
-using Imovelix.Api.Dto;
+using Imovelix.Api.Entidades;
+using Imovelix.Api.Entidades.Anuncio;
+using Imovelix.Api.ViewModels.Anuncio;
 
 namespace Imovelix.Api.Controllers
 {
@@ -24,7 +26,7 @@ namespace Imovelix.Api.Controllers
 
         // GET: api/Anuncios
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AnuncioDto>>> GetAnuncios()
+        public async Task<ActionResult<IEnumerable<AnuncioVm>>> GetAnuncios()
         {
           if (_context.Anuncios == null)
           {
@@ -32,11 +34,11 @@ namespace Imovelix.Api.Controllers
             }
             var anuncios = await _context.Anuncios.Include(a => a.Imovel).ThenInclude(i => i.Endereco).ToListAsync();
 
-            var listaAnuncioDto = new List<AnuncioDto>();
+            var listaAnuncioDto = new List<AnuncioVm>();
 
             foreach (var anuncio in anuncios)
             {
-                var anuncioDto = new AnuncioDto
+                var anuncioDto = new AnuncioVm
                 {
                     AnuncioId = anuncio.Id,
                     Titulo = anuncio.Titulo,
@@ -84,7 +86,7 @@ namespace Imovelix.Api.Controllers
         // PUT: api/Anuncios/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAnuncio(Guid id, AnuncioEditarDto anuncioEditar)
+        public async Task<IActionResult> PutAnuncio(Guid id, AnuncioEditarVm anuncioEditar)
         {
             
             var anuncio = await _context.Anuncios

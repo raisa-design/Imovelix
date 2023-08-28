@@ -1,4 +1,4 @@
-﻿
+﻿using Imovelix.Api.Entidades.Anuncio;
 using Imovelix.Dominio.Entidades.Anuncios;
 using Microsoft.EntityFrameworkCore;
 
