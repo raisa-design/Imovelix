@@ -1,4 +1,5 @@
-﻿using Imovelix.Dominio.Entidades.Anuncios;
+﻿using Imovelix.Api.Entidades.Anuncio;
+using Imovelix.Dominio.Entidades.Anuncios;
 using Imovelix.Dominio.Entidades.Imoveis;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Imovelix.Infra.Config
 {
-  public class AnuncioContext: DbContext
+    public class AnuncioContext: DbContext
   {
     public AnuncioContext(DbContextOptions<AnuncioContext> options) : base(options) { }
 

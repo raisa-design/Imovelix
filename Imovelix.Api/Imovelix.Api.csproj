@@ -22,8 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Imovelix.Aplicacao\Imovelix.Aplicacao\Imovelix.Aplicacao.csproj" />
-    <ProjectReference Include="..\Imovelix.Dominio\Imovelix.Dominio\Imovelix.Dominio.csproj" />
+    <Folder Include="Aplicacao\" />
   </ItemGroup>
 
 </Project>
