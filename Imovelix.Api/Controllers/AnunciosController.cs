@@ -24,13 +24,39 @@ namespace Imovelix.Api.Controllers
 
         // GET: api/Anuncios
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Anuncio>>> GetAnuncios()
+        public async Task<ActionResult<IEnumerable<AnuncioDto>>> GetAnuncios()
         {
           if (_context.Anuncios == null)
           {
               return NotFound();
-          }
-            return await _context.Anuncios.Include(a => a.Imovel).ThenInclude(i => i.Endereco).ToListAsync();
+            }
+            var anuncios = await _context.Anuncios.Include(a => a.Imovel).ThenInclude(i => i.Endereco).ToListAsync();
+
+            var listaAnuncioDto = new List<AnuncioDto>();
+
+            foreach (var anuncio in anuncios)
+            {
+                var anuncioDto = new AnuncioDto
+                {
+                    AnuncioId = anuncio.Id,
+                    Titulo = anuncio.Titulo,
+                    Descricao = anuncio.Descricao,
+                    Fotos = anuncio.Fotos,
+                    Cep = anuncio.Imovel.Endereco.Cep,
+                    Bairro = anuncio.Imovel.Endereco.Bairro,
+                    Cidade = anuncio.Imovel.Endereco.Cidade,
+                    Numero = anuncio.Imovel.Endereco.Numero,
+                    Complemento = anuncio.Imovel.Endereco.Complemento,
+                    Referencia = anuncio.Imovel.Endereco.Referencia,
+                    TipoImovel = (int)anuncio.Imovel.TipoImovel,
+                    QuantQuartos = anuncio.Imovel.QuantQuartos,
+                    Vagas = anuncio.Imovel.Vagas,
+                    QuantBanheiros = anuncio.Imovel.QuantBanheiros
+                };
+
+                listaAnuncioDto.Add(anuncioDto);
+            }
+            return listaAnuncioDto;
         }
 
         // GET: api/Anuncios/5
