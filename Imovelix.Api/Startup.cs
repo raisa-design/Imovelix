@@ -22,7 +22,9 @@ namespace Imovelix.Api
                 services.AddEndpointsApiExplorer();
                 services.AddSwaggerGen();
 
-            }
+             services.AddCors();
+
+        }
 
             public void Configure(WebApplication app, IWebHostEnvironment environment)
             {
@@ -36,7 +38,11 @@ namespace Imovelix.Api
 
                 app.UseAuthorization();
 
-                app.MapControllers();
+                app.UseCors(option => option.AllowAnyHeader()
+                                   .AllowAnyMethod()
+                                   .AllowAnyOrigin());
+
+            app.MapControllers();
             }
         }
     
